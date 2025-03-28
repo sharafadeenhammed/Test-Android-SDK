@@ -7,7 +7,8 @@ public class Exercise1 {
 
     public static void main (String[] args){
         //inputDivisionAndRemainder();
-        circleAreaAndPerimeter();
+        //circleAreaAndPerimeter();
+        integerToBinary();
     }
 
     static void inputDivisionAndRemainder (){
@@ -30,5 +31,21 @@ public class Exercise1 {
         double area = (double) Math.PI * radius * radius;
         System.out.println("area of circle = " + area);
         System.out.println("perimeter of circle = " + perimeter );
+    }
+
+    static void integerToBinary(){
+        Scanner in = new Scanner(System.in);
+        int dec_num, quotient, i =1, j;
+        int bin_num[] = new int[100];
+        System.out.println("enter the decimal number");
+        dec_num = in.nextInt();
+        quotient = dec_num;
+        while(quotient != 0){
+            bin_num[i++] = quotient%2;
+            quotient = quotient/2;
+        }
+        for(j = i-1; j>0; j--){
+            System.out.println(bin_num[j]);
+        }
     }
 }
