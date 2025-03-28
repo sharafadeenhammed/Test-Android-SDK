@@ -44,6 +44,7 @@ public class Exercise1 {
             bin_num[i++] = quotient%2;
             quotient = quotient/2;
         }
+        System.out.println("the binary of " + dec_num + "is: ");
         for(j = i-1; j>0; j--){
             System.out.println(bin_num[j]);
         }
