@@ -12,7 +12,8 @@ public class Exercise1 {
         //stringInputCharacterCounter();
         //reverseString();
         //multiplyArrayWithCorrespondingItem();
-        countEvenAndOddNumbersInArray();
+        //countEvenAndOddNumbersInArray();
+        drawPyramid();
     }
 
     static void inputDivisionAndRemainder (){
@@ -104,5 +105,18 @@ public class Exercise1 {
         }
         System.out.println("odd numbers count is: "+ oddNumbers);
         System.out.println("even numbers count is: "+evenNumbers);
+    }
+    static void drawPyramid(){
+        Scanner in = new Scanner(System.in);
+        System.out.println("Please enter the number of rows to draw...");
+        int rows = in.nextInt();
+        int rowSpaces = rows*2 -1;
+        for(int i = 1; i <= rows; i++){
+            int count = 0;
+            for(int spaces= rowSpaces; spaces!=0; spaces--) System.out.print(" ");
+            for(int timesToPrint = 1; timesToPrint<= i; timesToPrint++) System.out.print(i+" ");
+            System.out.println();
+            rowSpaces--;
+        }
     }
 }
