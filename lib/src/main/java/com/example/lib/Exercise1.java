@@ -8,7 +8,9 @@ public class Exercise1 {
     public static void main (String[] args){
         //inputDivisionAndRemainder();
         //circleAreaAndPerimeter();
-        integerToBinary();
+        //integerToBinary();
+        //stringInputCharacterCounter();
+        reverseString();
     }
 
     static void inputDivisionAndRemainder (){
@@ -48,5 +50,39 @@ public class Exercise1 {
         for(j = i-1; j>0; j--){
             System.out.println(bin_num[j]);
         }
+    }
+
+    static void stringInputCharacterCounter(){
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter String you want to count: ");
+        String inputStrings = in.nextLine();
+
+        System.out.println("total input count : "+inputStrings.length());
+        char[] inputStringArray = inputStrings.toCharArray();
+        int letters =0, spaces = 0, numbers =0, others =0;
+        for(char character: inputStringArray){
+            if(Character.isLetter(character)){letters++;}
+            else if(Character.isSpaceChar(character)){spaces++;}
+            else if(Character.isDigit(character)){numbers++;}
+            else{others++;}
+        }
+        System.out.println("letters count: "+letters);
+        System.out.println("spaces count: "+spaces);
+        System.out.println("numbers count: "+numbers);
+        System.out.println("others characters count: "+others);
+    }
+
+    static void reverseString(){
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter String you want to reverse: ");
+        String inputStrings = in.nextLine();
+        char[] inputStringArray = inputStrings.toCharArray();
+        String reversedString = "";
+
+        for(int i = inputStrings.length() -1; i>=0; i-- ){
+            reversedString += inputStringArray[i];
+        }
+        System.out.println(reversedString);
+
     }
 }
