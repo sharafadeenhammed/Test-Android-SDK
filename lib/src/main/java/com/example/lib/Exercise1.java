@@ -13,7 +13,8 @@ public class Exercise1 {
         //reverseString();
         //multiplyArrayWithCorrespondingItem();
         //countEvenAndOddNumbersInArray();
-        drawPyramid();
+        //drawPyramid();
+        squareMartrixAdder();
     }
 
     static void inputDivisionAndRemainder (){
@@ -118,5 +119,43 @@ public class Exercise1 {
             System.out.println();
             rowSpaces--;
         }
+    }
+
+    static void squareMartrixAdder(){
+        Scanner in = new Scanner(System.in);
+        int matrix1[][] = new int [3][3];
+        int matrix2[][] = new int[3][3];
+        int matrixAdditionResult[][] = new int[3][3];
+        // fill up matrix one
+        for(int matrixRowIndex = 0; matrixRowIndex < matrix1.length; matrixRowIndex++ ){
+            for(int matrixColumnIndex = 0; matrixColumnIndex<matrix1[matrixRowIndex].length; matrixColumnIndex++ ){
+                System.out.print("enter the value for matrix1 at position "+matrixRowIndex +"," +matrixColumnIndex);
+                matrix1[matrixRowIndex][matrixColumnIndex] = in.nextInt();
+            }
+        }
+        // fill up matrix two
+        for(int matrixRowIndex = 0; matrixRowIndex < matrix2.length; matrixRowIndex++ ){
+            for(int matrixColumnIndex = 0; matrixColumnIndex<matrix2[matrixRowIndex].length; matrixColumnIndex++ ){
+                System.out.print("enter the value for matrix2 at position "+matrixRowIndex +"," +matrixColumnIndex);
+                matrix2[matrixRowIndex][matrixColumnIndex] = in.nextInt();
+            }
+        }
+        // add matrix
+        for(int matrixRowIndex = 0; matrixRowIndex < matrixAdditionResult.length; matrixRowIndex++ ){
+            for(int matrixColumnIndex = 0; matrixColumnIndex<matrixAdditionResult[matrixRowIndex].length; matrixColumnIndex++ ){
+                matrixAdditionResult[matrixRowIndex][matrixColumnIndex] = matrix1[matrixRowIndex][matrixColumnIndex] + matrix2[matrixRowIndex][matrixColumnIndex];
+            }
+        }
+        // print result
+        System.out.println("result of addition of matrix: ");
+        for(int matrixRowIndex = 0; matrixRowIndex < matrixAdditionResult.length; matrixRowIndex++ ){
+            for(int matrixColumnIndex = 0; matrixColumnIndex<matrixAdditionResult[matrixRowIndex].length; matrixColumnIndex++ ){
+                //System.out.println("value for matrix1 at position "+matrixRowIndex +"," +matrixColumnIndex +" = "+ matrixAdditionResult[matrixRowIndex][matrixColumnIndex] );
+                System.out.print(matrixAdditionResult[matrixRowIndex][matrixColumnIndex] + " " );
+            }
+            System.out.println();
+
+        }
+
     }
 }
