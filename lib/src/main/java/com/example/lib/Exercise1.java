@@ -10,7 +10,8 @@ public class Exercise1 {
         //circleAreaAndPerimeter();
         //integerToBinary();
         //stringInputCharacterCounter();
-        reverseString();
+        //reverseString();
+        multiplyArrayWithCorrespondingItem();
     }
 
     static void inputDivisionAndRemainder (){
@@ -78,11 +79,19 @@ public class Exercise1 {
         String inputStrings = in.nextLine();
         char[] inputStringArray = inputStrings.toCharArray();
         String reversedString = "";
+        // reverse string
+        for(int i = inputStrings.length() -1; i>=0; i-- ){reversedString += inputStringArray[i];}
+        System.out.println("the revesed string is :  "+reversedString);
+    }
 
-        for(int i = inputStrings.length() -1; i>=0; i-- ){
-            reversedString += inputStringArray[i];
+    static void multiplyArrayWithCorrespondingItem(){
+        int firstNumberArray[] = {1,2,3,4};
+        int secondNumberArray[] = {1,2,3,4};
+        int result[] = new int[4];
+        for(int index = 0; index<firstNumberArray.length; index++){
+            result[index] = firstNumberArray[index] * secondNumberArray[index];
         }
-        System.out.println(reversedString);
-
+        System.out.println("result of multiplication is :");
+        for(int number:result){System.out.print(""+number+" ");}
     }
 }
