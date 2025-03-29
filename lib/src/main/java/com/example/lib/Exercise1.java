@@ -11,7 +11,8 @@ public class Exercise1 {
         //integerToBinary();
         //stringInputCharacterCounter();
         //reverseString();
-        multiplyArrayWithCorrespondingItem();
+        //multiplyArrayWithCorrespondingItem();
+        countEvenAndOddNumbersInArray();
     }
 
     static void inputDivisionAndRemainder (){
@@ -48,9 +49,8 @@ public class Exercise1 {
             quotient = quotient/2;
         }
         System.out.println("the binary of " + dec_num + "is: ");
-        for(j = i-1; j>0; j--){
-            System.out.println(bin_num[j]);
-        }
+        for(j = i-1; j>0; j--) System.out.println(bin_num[j]);
+
     }
 
     static void stringInputCharacterCounter(){
@@ -62,10 +62,10 @@ public class Exercise1 {
         char[] inputStringArray = inputStrings.toCharArray();
         int letters =0, spaces = 0, numbers =0, others =0;
         for(char character: inputStringArray){
-            if(Character.isLetter(character)){letters++;}
-            else if(Character.isSpaceChar(character)){spaces++;}
-            else if(Character.isDigit(character)){numbers++;}
-            else{others++;}
+            if(Character.isLetter(character))letters++;
+            else if(Character.isSpaceChar(character))spaces++;
+            else if(Character.isDigit(character))numbers++;
+            else others++;
         }
         System.out.println("letters count: "+letters);
         System.out.println("spaces count: "+spaces);
@@ -80,7 +80,7 @@ public class Exercise1 {
         char[] inputStringArray = inputStrings.toCharArray();
         String reversedString = "";
         // reverse string
-        for(int i = inputStrings.length() -1; i>=0; i-- ){reversedString += inputStringArray[i];}
+        for(int i = inputStrings.length() -1; i>=0; i-- )reversedString += inputStringArray[i];
         System.out.println("the revesed string is :  "+reversedString);
     }
 
@@ -92,6 +92,17 @@ public class Exercise1 {
             result[index] = firstNumberArray[index] * secondNumberArray[index];
         }
         System.out.println("result of multiplication is :");
-        for(int number:result){System.out.print(""+number+" ");}
+        for(int number:result) System.out.print(""+number+" ");
+    }
+
+    static void countEvenAndOddNumbersInArray(){
+        int numbers[] = {1,3,4,5,6,7,8,9,10,11};
+        int evenNumbers = 0, oddNumbers =0;
+        for(int number: numbers){
+            if(number%2 == 0) evenNumbers++;
+            else oddNumbers++;
+        }
+        System.out.println("odd numbers count is: "+ oddNumbers);
+        System.out.println("even numbers count is: "+evenNumbers);
     }
 }
