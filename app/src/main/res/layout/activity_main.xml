@@ -4,17 +4,19 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:paddingHorizontal="30dp"
+    android:background="@drawable/new_bg_image"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/myButton"
-        android:layout_width="wrap_content"
-        android:text="Click Me!"
-        android:background="@color/teal_700"
-        android:layout_marginVertical="30dp"
+    <TextView
+        android:layout_marginVertical="100dp"
+        android:text="Welcome to Greetings App
+"       android:textSize="18dp"
         android:textStyle="bold"
-        android:textSize="50sp"
-        android:layout_height="wrap_content" />
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        />
 
     <EditText
         android:id="@+id/editText"
@@ -22,16 +24,19 @@
         android:layout_height="150dp"
         android:hint="Enter Your Name"
         android:inputType="text"
-        android:textSize="60sp"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textColorHint="#ffffff"
         android:textStyle="bold" />
 
-    <ImageView
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="match_parent"
+        android:text="Say Hello!"
+        android:background="@color/teal_700"
         android:layout_marginVertical="30dp"
-        android:id="@+id/myImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/fox"
-        android:scaleType="fitCenter"
-        />
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

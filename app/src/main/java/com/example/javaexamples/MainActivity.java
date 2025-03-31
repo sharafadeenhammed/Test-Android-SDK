@@ -16,15 +16,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // get text entered by user...
-        //EditText textInput = findViewById(R.id.editText);
-        //textInput.setText("hello friends how are you doing today...");
-        //String textEntered = textInput.getText().toString();
-
+        EditText textInput = findViewById(R.id.editText);
         Button myButton = findViewById(R.id.myButton);
         myButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You clicked!!", Toast.LENGTH_LONG ).show();
+                String textEntered = textInput.getText().toString();
+                Toast.makeText(MainActivity.this, "Welcome "+textEntered+" to our APP", Toast.LENGTH_LONG ).show();
             }
         });
 
