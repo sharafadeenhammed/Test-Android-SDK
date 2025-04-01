@@ -15,16 +15,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // get text entered by user...
-        TextView textView = findViewById(R.id.counterText);
         Button myButton = findViewById(R.id.myButton);
         myButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                int currentCountText =  textView.getText().toString().isEmpty() ? 0 : (Integer.parseInt(textView.getText().toString()));
-                currentCountText++;
-                textView.setText(""+currentCountText);
+                updateValues();
             }
         });
+    }
 
+    void updateValues (){
+        TextView poundTextView = findViewById(R.id.weightInPounds);
+        EditText poundEditTextView = findViewById(R.id.weightInKilo);
+        final String  enteredValue = poundEditTextView.getText().toString();
+        final double kilos =  enteredValue.isEmpty() ? 0 : Double.parseDouble(enteredValue);
+        final double valueInPound = convertKiloToPounds(kilos);
+        poundTextView.setText(valueInPound > 0 ? valueInPound+" pounds": "");
+    }
+
+    double convertKiloToPounds(double kilos){
+        // 1 kilo = 2.20462 pounds
+        return kilos * 2.20462;
     }
 }
