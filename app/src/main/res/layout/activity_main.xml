@@ -7,15 +7,27 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
-        android:text="hello there"
-        android:textSize="30sp"
+        android:text="hello there this is first activity"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:text="Goto second activity"
+        app:layout_constraintEnd_toEndOf="@id/text1"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@id/text1"
+        app:layout_constraintTop_toTopOf="@id/text1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
