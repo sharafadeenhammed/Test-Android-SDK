@@ -1,6 +1,7 @@
 package com.example.javaexamples;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,16 +18,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toast.makeText(this, "ON CREATE TOAST MESSAGE", Toast.LENGTH_LONG).show();
         final Button button = findViewById(R.id.button);
+        final Button googleBtn = findViewById(R.id.google);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 gotoSecondActivity();
             }
         });
+
+        googleBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                gotoWebpage();
+            }
+        });
     }
 
     void gotoSecondActivity(){
         Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    void gotoWebpage (){
+        final Uri uri =  Uri.parse("https://www.google.com");
+        final Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
 
