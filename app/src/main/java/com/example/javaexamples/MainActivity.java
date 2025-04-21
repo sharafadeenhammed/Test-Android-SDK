@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart(){
-        // runs once when activity is loaded and is interactive by user
+        // runs once when activity is loaded and can be interacted with by user
         super.onStart();
         final long time = 5;
         Toast.makeText(this, "ON START TOAST MESSAGE", Toast.LENGTH_LONG).show();
